@@ -1,5 +1,5 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { Phone, CheckCircle, MapPin, Target, Award, BookOpen, Heart, ShieldCheck } from 'lucide-react'
+import { createFileRoute, Link } from '@tanstack/react-router'
+import { Target, Award, Heart, ShieldCheck } from 'lucide-react'
 import { Header } from '../components/Header'
 
 export const Route = createFileRoute('/a-propos')({
