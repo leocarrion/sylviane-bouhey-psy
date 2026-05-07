@@ -74,6 +74,13 @@ await build({
   platform: 'node',
   format: 'esm',
   external: ['node:*'],
+  // react-dom (CJS) uses bare require("util") etc. inside an ESM bundle.
+  // esbuild's __require shim checks `typeof require !== "undefined"`, which is
+  // always false in ESM. Injecting createRequire makes it truthy so CJS
+  // modules can resolve Node built-ins without crashing.
+  banner: {
+    js: `import { createRequire as __cjsRequire } from 'module';\nconst require = __cjsRequire(import.meta.url);`,
+  },
   logLevel: 'warning',
 });
 
