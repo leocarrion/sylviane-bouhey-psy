@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sage: #7A9E7E;
+  --color-beige: #F5EFE6;
+  --color-offwhite: #FAFAF8;
+  --color-charcoal: #2C2C2C;
+  --color-gold: #C9922A;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  html,
+  body {
+    @apply text-charcoal bg-offwhite font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  .using-mouse * {
+    outline: none !important;
+  }
+}
